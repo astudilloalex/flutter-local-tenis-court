@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tenis_court/app/infrastructure/sources/app_asset.dart';
 import 'package:tenis_court/ui/pages/welcome/widgets/register_button.dart';
+import 'package:tenis_court/ui/routes/route_name.dart';
 import 'package:tenis_court/ui/widgets/company_logo.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -30,7 +32,9 @@ class WelcomePage extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.go(RouteName.signIn);
+                    },
                     child: Text(
                       AppLocalizations.of(context)!.signIn,
                     ),
