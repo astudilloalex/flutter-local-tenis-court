@@ -1,3 +1,7 @@
 {
-    "@@locale": "es"
+    "@@locale": "es",
+    "register": "Registrarme",
+    "@register": {},
+    "signIn": "Iniciar sesión",
+    "@signIn": {}
 }
