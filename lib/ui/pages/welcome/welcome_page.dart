@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tenis_court/app/infrastructure/sources/app_asset.dart';
 import 'package:tenis_court/ui/pages/welcome/widgets/register_button.dart';
 import 'package:tenis_court/ui/widgets/company_logo.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
