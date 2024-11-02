@@ -1,7 +1,21 @@
 {
     "@@locale": "es",
+    "email": "Correo electrónico",
+    "@email": {},
+    "forgotYourPassword": "¿Olvidaste tu contraseña?",
+    "@forgotYourPassword": {},
+    "login": "Iniciar sesión",
+    "@login": {},
+    "password": "Contraseña",
+    "@password": {},
+    "rememberPassword": "Recordar contraseña",
+    "@rememberPassword": {},
     "register": "Registrarme",
     "@register": {},
     "signIn": "Iniciar sesión",
-    "@signIn": {}
+    "@signIn": {},
+    "signUp": "Regístrate",
+    "@signUp": {},
+    "stillDoNotHaveAnAccount": "¿Aún no tienes cuenta?",
+    "@stillDoNotHaveAnAccount": {}
 }

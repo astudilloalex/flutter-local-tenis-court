@@ -1,7 +1,21 @@
 {
     "@@locale": "en",
+    "email": "Email",
+    "@email": {},
+    "forgotYourPassword": "Forgot your password?",
+    "@forgotYourPassword": {},
+    "login": "Login",
+    "@login": {},
+    "password": "Password",
+    "@password": {},
+    "rememberPassword": "Remember password",
+    "@rememberPassword": {},
     "register": "Register",
     "@register": {},
     "signIn": "Sign in",
-    "@signIn": {}
+    "@signIn": {},
+    "signUp": "Sign up",
+    "@signUp": {},
+    "stillDoNotHaveAnAccount": "Still don''t have an account?",
+    "@stillDoNotHaveAnAccount": {}
 }

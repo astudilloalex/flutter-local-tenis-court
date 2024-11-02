@@ -52,6 +52,7 @@ class SQLite {
 const String _createSQLV1 = '''
 CREATE TABLE users(
   id INTEGER PRIMARY KEY,
+  code VARCHAR(20) NOT NULL UNIQUE,
   email VARCHAR(255) NOT NULL UNIQUE,
   names TEXT NOT NULL,
   phone VARCHAR(25),
