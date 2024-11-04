@@ -17,5 +17,7 @@
     "signUp": "Regístrate",
     "@signUp": {},
     "stillDoNotHaveAnAccount": "¿Aún no tienes cuenta?",
-    "@stillDoNotHaveAnAccount": {}
+    "@stillDoNotHaveAnAccount": {},
+    "userNotFound": "Usuario no encontrado",
+    "@userNotFound": {}
 }

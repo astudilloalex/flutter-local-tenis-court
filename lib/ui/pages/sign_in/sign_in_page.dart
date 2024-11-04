@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tenis_court/ui/pages/sign_in/blocs/sign_in_bloc.dart';
+import 'package:tenis_court/ui/pages/sign_in/blocs/sign_in_event.dart';
 import 'package:tenis_court/ui/pages/sign_in/widgets/sign_in_app_bar.dart';
 import 'package:tenis_court/ui/pages/sign_in/widgets/sign_in_form.dart';
 import 'package:tenis_court/ui/pages/sign_in/widgets/sign_in_remember_me_checkbox.dart';
@@ -72,7 +75,9 @@ class SignInPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Center(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<SignInBloc>().add(const SignInEventSubmit());
+                    },
                     child: Text(
                       AppLocalizations.of(context)!.login,
                     ),

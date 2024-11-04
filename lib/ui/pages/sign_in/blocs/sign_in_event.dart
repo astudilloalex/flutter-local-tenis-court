@@ -23,3 +23,12 @@ class SignInEventRememberMeToggled extends SignInEvent {
     ];
   }
 }
+
+class SignInEventSubmit extends SignInEvent {
+  const SignInEventSubmit();
+
+  @override
+  List<Object?> get props {
+    return [];
+  }
+}

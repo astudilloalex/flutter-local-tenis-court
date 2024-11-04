@@ -17,5 +17,7 @@
     "signUp": "Sign up",
     "@signUp": {},
     "stillDoNotHaveAnAccount": "Still don''t have an account?",
-    "@stillDoNotHaveAnAccount": {}
+    "@stillDoNotHaveAnAccount": {},
+    "userNotFound": "User not found",
+    "@userNotFound": {}
 }

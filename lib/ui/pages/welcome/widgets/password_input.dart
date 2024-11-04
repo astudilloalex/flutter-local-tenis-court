@@ -6,8 +6,10 @@ class PasswordInput extends StatefulWidget {
   const PasswordInput({
     super.key,
     required this.controller,
+    this.validator,
   });
 
+  final FormFieldValidator<String>? validator;
   final TextEditingController controller;
 
   @override
@@ -40,6 +42,7 @@ class _PasswordInputState extends State<PasswordInput> {
         ),
       ),
       obscureText: !visiblePassword,
+      validator: widget.validator,
     );
   }
 }
