@@ -12,4 +12,9 @@ class Util {
     );
     return passwordRegex.hasMatch(password);
   }
+
+  static bool isValidPhoneNumber(String phoneNumber) {
+    final RegExp phoneRegExp = RegExp(r'^\+?[0-9]{7,15}$');
+    return phoneRegExp.hasMatch(phoneNumber);
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:bcrypt/bcrypt.dart';
 import 'package:fpdart/fpdart.dart';
+import 'package:tenis_court/app/app.dart';
 import 'package:tenis_court/app/domain/failure.dart';
 import 'package:tenis_court/src/user/domain/i_user_repository.dart';
 import 'package:tenis_court/src/user/domain/user.dart';
@@ -39,7 +40,18 @@ class UserService {
 
   Future<Either<Failure, User>> create(User user) async {
     try {
-      final User savedUser = await _repository.save(user);
+      if (await _repository.findByEmail(user.email) != null) {
+        return const Left(Failure(code: 'email-already-exists'));
+      }
+      final User savedUser = await _repository.save(
+        user.copyWith(
+          code: generateCode(),
+          password: BCrypt.hashpw(
+            user.password,
+            BCrypt.gensalt(),
+          ),
+        ),
+      );
       if (savedUser.id <= 0) {
         return const Left(Failure(code: 'error-saving'));
       }

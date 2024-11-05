@@ -7,10 +7,12 @@ class PasswordInput extends StatefulWidget {
     super.key,
     required this.controller,
     this.validator,
+    this.labelText,
   });
 
   final FormFieldValidator<String>? validator;
   final TextEditingController controller;
+  final String? labelText;
 
   @override
   State<PasswordInput> createState() => _PasswordInputState();
@@ -22,11 +24,12 @@ class _PasswordInputState extends State<PasswordInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       decoration: InputDecoration(
         prefixIconConstraints: const BoxConstraints(
           minWidth: 20.0,
         ),
-        labelText: AppLocalizations.of(context)!.password,
+        labelText: widget.labelText ?? AppLocalizations.of(context)!.password,
         prefixIcon: const InputPrefixIcon(
           iconData: Icons.lock_outline_rounded,
         ),
@@ -43,6 +46,7 @@ class _PasswordInputState extends State<PasswordInput> {
       ),
       obscureText: !visiblePassword,
       validator: widget.validator,
+      keyboardType: TextInputType.visiblePassword,
     );
   }
 }

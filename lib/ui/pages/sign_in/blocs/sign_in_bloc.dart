@@ -66,14 +66,14 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   }
 
   String? validateEmail(String? value) {
-    if (value == null || !Util.isValidEmail(value)) {
+    if (value == null || !Util.isValidEmail(value.trim())) {
       return 'invalid-email';
     }
     return null;
   }
 
   String? validatePassword(String? value) {
-    if (value == null || !Util.isSecurePassword(value)) {
+    if (value == null || !Util.isSecurePassword(value.trim())) {
       return 'weak-password';
     }
     return null;

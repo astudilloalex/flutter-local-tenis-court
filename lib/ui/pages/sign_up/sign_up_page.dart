@@ -2,30 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tenis_court/ui/pages/sign_in/blocs/sign_in_bloc.dart';
-import 'package:tenis_court/ui/pages/sign_in/blocs/sign_in_event.dart';
-import 'package:tenis_court/ui/pages/sign_in/widgets/sign_in_app_bar.dart';
-import 'package:tenis_court/ui/pages/sign_in/widgets/sign_in_form.dart';
-import 'package:tenis_court/ui/pages/sign_in/widgets/sign_in_remember_me_checkbox.dart';
+import 'package:tenis_court/ui/pages/sign_up/blocs/sign_up_bloc.dart';
+import 'package:tenis_court/ui/pages/sign_up/blocs/sign_up_event.dart';
+import 'package:tenis_court/ui/pages/sign_up/widgets/sign_up_app_bar.dart';
+import 'package:tenis_court/ui/pages/sign_up/widgets/sign_up_form.dart';
 import 'package:tenis_court/ui/routes/route_name.dart';
 import 'package:tenis_court/ui/theme/color_extension.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          const SignInAppBar(),
+          const SignUpAppBar(),
           SliverList.list(
             children: [
               const SizedBox(height: 32.0),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(
-                  AppLocalizations.of(context)!.login,
+                  AppLocalizations.of(context)!.signUp,
                   style: const TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.w600,
@@ -48,29 +47,7 @@ class SignInPage extends StatelessWidget {
               const SizedBox(height: 32.0),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: SignInForm(),
-              ),
-              const SizedBox(height: 8.0),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: SignInRememberMeCheckbox(),
-              ),
-              const SizedBox(height: 16.0),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Center(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Text(
-                      AppLocalizations.of(context)!.forgotYourPassword,
-                      style: TextStyle(
-                        color:
-                            Theme.of(context).extension<ColorExtension>()?.link,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                ),
+                child: SignUpForm(),
               ),
               const SizedBox(height: 32.0),
               Padding(
@@ -78,10 +55,10 @@ class SignInPage extends StatelessWidget {
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      context.read<SignInBloc>().add(const SignInEventSubmit());
+                      context.read<SignUpBloc>().add(const SignUpEventSubmit());
                     },
                     child: Text(
-                      AppLocalizations.of(context)!.login,
+                      AppLocalizations.of(context)!.signUp,
                     ),
                   ),
                 ),
@@ -92,15 +69,15 @@ class SignInPage extends StatelessWidget {
                 child: Text.rich(
                   TextSpan(
                     text:
-                        '${AppLocalizations.of(context)!.stillDoNotHaveAnAccount} ',
+                        '${AppLocalizations.of(context)!.iAlreadyHaveAnAccount} ',
                     children: [
                       WidgetSpan(
                         child: InkWell(
                           onTap: () {
-                            context.go(RouteName.signUp);
+                            context.go(RouteName.signIn);
                           },
                           child: Text(
-                            AppLocalizations.of(context)!.signUp,
+                            AppLocalizations.of(context)!.signIn,
                             style: TextStyle(
                               color: Theme.of(context)
                                   .extension<ColorExtension>()

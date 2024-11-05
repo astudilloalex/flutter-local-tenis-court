@@ -27,6 +27,7 @@ class SignInForm extends StatelessWidget {
                 iconData: Icons.email_outlined,
               ),
             ),
+            keyboardType: TextInputType.emailAddress,
             validator: (value) {
               final String? code = context.read<SignInBloc>().validateEmail(
                     value,
